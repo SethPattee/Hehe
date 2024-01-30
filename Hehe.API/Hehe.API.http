@@ -1,0 +1,6 @@
+@Hehe.API_HostAddress = http://localhost:5169
+
+GET {{Hehe.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

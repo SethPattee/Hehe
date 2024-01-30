@@ -1,0 +1,29 @@
+﻿@page "/"
+@using Hehe.classlib
+@inject IService service;
+
+<div class="d-flex flex-column">
+    <input class="form-control mx-3" id="a" @bind="a">
+    <input class="form-control mx-3" id="b" @bind="b">
+</div>
+<button class="btn btn-primary" @onclick = "Add">Add numbers</button>
+
+@if(result != null)
+{
+    <p>Result: @result</p>
+}
+else
+{
+    <p>Uh oh</p>
+}
+
+@code{
+    string a = "";
+    string b = "";
+    int? result = null;
+    public async void Add()
+    {
+        result = await service.Add(Convert.ToInt32(a), Convert.ToInt32(b));
+    }
+
+}
