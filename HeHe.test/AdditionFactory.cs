@@ -21,7 +21,7 @@ namespace HeHe.test
         {
             builder.ConfigureTestServices(services => {
                 services.RemoveAll<IService>();
-                services.AddScoped<IService, ApiService>(x => new ApiService() { number = 3});
+                services.AddScoped<IService, ApiService>(x => new ApiService() { number = 1});
             });
             base.ConfigureWebHost(builder);
         }
